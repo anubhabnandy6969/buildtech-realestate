@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ongoing Project | Premium Residential Flats</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background-color: #0f172a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #f59e0b;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #f59e0b;
+    }
+
+    .btn-contact {
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .project-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-header h1 {
+      font-size: 38px;
+      color: #0f172a;
+      margin-top: 15px;
+      font-weight: 800;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+    }
+
+    .project-grid img {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      object-fit: cover;
+    }
+
+    .project-details {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-details h2 {
+      font-size: 26px;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .project-details p {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .spec-item {
+      background: #f8fafc;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid #edf2f7;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: #0f172a;
+      font-size: 16px;
+    }
+
+    .spec-item span {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .btn-book {
+      display: inline-block;
+      text-align: center;
+      background: #f59e0b;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: opacity 0.2s;
+    }
+
+    .btn-book:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <a href="index.html" class="logo">BUILD<span>TECH</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services (G+4 to G+18)</a>
+      <a href="ongoing.html" class="active">Ongoing Project</a>
+      <a href="contact.html" class="btn-contact">Book Site Visit</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="project-header">
+      <span class="badge">Handover in 4–5 Months</span>
+      <h1>Emerald Heights Residency</h1>
+    </div>
+
+    <div class="project-grid">
+      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Ongoing Residential Project">
+      
+      <div class="project-details">
+        <h2>Modern 2BHK & 3BHK Living Spaces</h2>
+        <p>A masterfully designed residential project crafted with premium fittings, earthquake-resistant RCC structure, and top-tier ventilation for modern families.</p>
+        
+        <div class="specs-grid">
+          <div class="spec-item">
+            <strong>Configuration</strong>
+            <span>2 & 3 BHK Available</span>
+          </div>
+          <div class="spec-item">
+            <strong>Sizes</strong>
+            <span>850 – 1350 Sq. Ft.</span>
+          </div>
+          <div class="spec-item">
+            <strong>Possession Date</strong>
+            <span>Within 4–5 Months</span>
+          </div>
+          <div class="spec-item">
+            <strong>Approval</strong>
+            <span>100% Municipal Sanctioned</span>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn-book">Schedule a Free Site Visit</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

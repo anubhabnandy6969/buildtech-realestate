@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Construction & Developers | Building Trust</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* Navigation Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background-color: #0f172a; /* Deep Slate/Navy */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #f59e0b; /* Construction Gold/Amber */
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f59e0b;
+    }
+
+    .btn-contact {
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 25px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+                  url('https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .tagline {
+      display: inline-block;
+      background-color: rgba(245, 158, 11, 0.2);
+      color: #f59e0b;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-primary {
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn-secondary {
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    /* Trust Metrics / Stats Section */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 50px 8%;
+      background-color: #0f172a;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+    }
+
+    .metric-item h3 {
+      font-size: 38px;
+      font-weight: 800;
+      color: #f59e0b;
+      margin-bottom: 5px;
+    }
+
+    .metric-item p {
+      color: #94a3b8;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 90px 8%;
+      background-color: #ffffff;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 60px;
+    }
+
+    .section-title span {
+      color: #f59e0b;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #0f172a;
+      margin-top: 10px;
+      font-weight: 800;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+    }
+
+    .service-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .service-card-body {
+      padding: 30px;
+    }
+
+    .service-card-body h3 {
+      font-size: 22px;
+      color: #0f172a;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .service-card-body p {
+      color: #64748b;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-card-body ul {
+      list-style: none;
+      margin-bottom: 25px;
+    }
+
+    .service-card-body ul li {
+      color: #334155;
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-card-body ul li::before {
+      content: "✔";
+      color: #f59e0b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">BUILD<span>TECH</span></div>
+    <nav>
+      <nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services (G+4 to G+18)</a>
+  <a href="ongoing.html">Ongoing Project</a>
+  <a href="contact.html" class="btn-contact">Get a Quote</a>
+</nav>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="tagline">Engineering Excellence & Living Spaces</span>
+      <h1>Building Foundations, Elevating Lifestyles.</h1>
+      <p>Specialized in G+4 to G+18 structural contracting and crafting premium residential flats with unmatched engineering standards.</p>
+      
+      <div class="cta-group">
+        <a href="#ongoing" class="btn-primary">Explore Ongoing Flats</a>
+        <a href="#services" class="btn-secondary">Contracting Services</a>
+      </div>
+    </div>
+  </section>
+  <!-- Key Metrics / Trust Numbers -->
+  <section class="metrics">
+    <div class="metric-item">
+      <h3>15+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="metric-item">
+      <h3>G+18</h3>
+      <p>Structural Capability</p>
+    </div>
+    <div class="metric-item">
+      <h3>50+</h3>
+      <p>Projects Delivered</p>
+    </div>
+    <div class="metric-item">
+      <h3>100%</h3>
+      <p>Compliance & Safety</p>
+    </div>
+  </section>
+
+  <!-- Dual Core Services -->
+  <section id="services" class="services-section">
+    <div class="section-title">
+      <span>What We Build</span>
+      <h2>Core Capabilities & Ventures</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Contracting Card -->
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="High-Rise Structural Contracting" />
+        <div class="service-card-body">
+          <h3>High-Rise Civil Contracting</h3>
+          <p>End-to-end structural construction for developers, specializing in mid to high-rise RCC framing, foundation piling, and finishing.</p>
+          <ul>
+            <li>Expertise: G+4 to G+18 Buildings</li>
+            <li>Heavy machinery & certified safety gear</li>
+            <li>Strict structural audit compliance</li>
+          </ul>
+          <a href="#contact" class="btn-secondary" style="color: #0f172a; border-color: #cbd5e1; display: inline-block;">Request Structural Quote</a>
+        </div>
+      </div>
+
+      <!-- Real Estate Promoting Card -->
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Residential Real Estate Flat Development" />
+        <div class="service-card-body">
+          <h3>Self-Promoted Real Estate</h3>
+          <p>Designing modern living spaces with premium urban planning, transparent legal documentations, and top-tier amenities.</p>
+          <ul>
+            <li>Modern 2BHK & 3BHK Smart Layouts</li>
+            <li>100% Legal & Approved municipal plans</li>
+            <li>On-time handover guarantee</li>
+          </ul>
+          <a href="#ongoing" class="btn-primary" style="display: inline-block;">View Available Flats</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

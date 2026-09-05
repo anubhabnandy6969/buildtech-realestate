@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structural Contracting Services | G+4 to G+18</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background-color: #0f172a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #f59e0b;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #f59e0b;
+    }
+
+    .btn-contact {
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .page-title span {
+      color: #f59e0b;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .page-title h1 {
+      font-size: 36px;
+      color: #0f172a;
+      margin-top: 10px;
+      font-weight: 800;
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .service-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 35px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+    .service-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .service-info h2 {
+      font-size: 22px;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .service-info p {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .features-tag {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .features-tag span {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">BUILD<span>TECH</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services (G+4 to G+18)</a>
+      <a href="ongoing.html">Ongoing Project</a>
+      <a href="contact.html" class="btn-contact">Get a Quote</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-title">
+      <span>High-Rise Expertise</span>
+      <h1>Civil Engineering & Contracting</h1>
+    </div>
+
+    <div class="services-list">
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?auto=format&fit=crop&w=600&q=80" alt="High Rise RCC Construction">
+        <div class="service-info">
+          <h2>High-Rise RCC Framing (Up to G+18)</h2>
+          <p>Complete structural casting with precision shuttering, mix design adherence, and seismic-resistant reinforcement laying for mid-to-high scale towers.</p>
+          <div class="features-tag">
+            <span>Tower Crane Operations</span>
+            <span>RMC Pumping</span>
+            <span>Safety Audit 100%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="Foundation and Piling Work">
+        <div class="service-info">
+          <h2>Deep Foundation & Pile Works</h2>
+          <p>Heavy hydraulic piling, raft foundations, and structural retaining walls engineered to bear heavy dead and live loads on all soil grades.</p>
+          <div class="features-tag">
+            <span>Bored Cast-in-Situ Piling</span>
+            <span>Soil Test Verification</span>
+            <span>Raft Foundations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
