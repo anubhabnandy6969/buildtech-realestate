@@ -194,6 +194,103 @@
     .btn-book:hover {
       opacity: 0.9;
     }
+        /* EMI Calculator Styling */
+        .calculator-section {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 35px;
+      margin-top: 40px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .calculator-section h2 {
+      font-size: 24px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .calculator-section p {
+      color: #64748b;
+      margin-bottom: 25px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .calc-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+
+    .calc-group input[type="range"] {
+      width: 100%;
+      accent-color: #f59e0b;
+      cursor: pointer;
+    }
+
+    .calc-result-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .calc-result-box span {
+      color: #cbd5e1;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .calc-result-box h3 {
+      font-size: 38px;
+      color: #f59e0b;
+      margin: 10px 0 20px 0;
+      font-weight: 800;
+    }
+
+    .calc-breakdown {
+      width: 100%;
+      border-top: 1px solid #334155;
+      padding-top: 15px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .calc-breakdown strong {
+      display: block;
+      color: #ffffff;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -251,5 +348,91 @@
  target="_blank">
 💬 Chat on WhatsApp
 </a>
+    <!-- EMI Calculator Tool -->
+    <div class="calculator-section">
+        <h2>Estimate Your Monthly EMI</h2>
+        <p>Plan your flat purchase with our instant home loan calculator.</p>
+  
+        <div class="calc-grid">
+          <div class="calc-inputs">
+            <div class="calc-group">
+              <label>
+                <span>Loan Amount</span>
+                <span id="loanVal">₹35,00,000</span>
+              </label>
+              <input type="range" id="loanAmount" min="1000000" max="10000000" step="50000" value="3500000">
+            </div>
+  
+            <div class="calc-group">
+              <label>
+                <span>Interest Rate (% per annum)</span>
+                <span id="rateVal">8.5%</span>
+              </label>
+              <input type="range" id="interestRate" min="7.0" max="12.0" step="0.1" value="8.5">
+            </div>
+  
+            <div class="calc-group">
+              <label>
+                <span>Loan Tenure (Years)</span>
+                <span id="tenureVal">20 Years</span>
+              </label>
+              <input type="range" id="tenureYears" min="5" max="30" step="1" value="20">
+            </div>
+          </div>
+  
+          <div class="calc-result-box">
+            <span>Monthly Payable EMI</span>
+            <h3 id="monthlyEmi">₹30,374</h3>
+            <div class="calc-breakdown">
+              <div>
+                Principal Amount
+                <strong id="principalDisplay">₹35,00,000</strong>
+              </div>
+              <div>
+                Total Interest
+                <strong id="interestDisplay">₹37,89,760</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const loanSlider = document.getElementById('loanAmount');
+        const rateSlider = document.getElementById('interestRate');
+        const tenureSlider = document.getElementById('tenureYears');
+    
+        const loanVal = document.getElementById('loanVal');
+        const rateVal = document.getElementById('rateVal');
+        const tenureVal = document.getElementById('tenureVal');
+    
+        const monthlyEmi = document.getElementById('monthlyEmi');
+        const principalDisplay = document.getElementById('principalDisplay');
+        const interestDisplay = document.getElementById('interestDisplay');
+    
+        function calculateEMI() {
+          const P = parseFloat(loanSlider.value);
+          const r = parseFloat(rateSlider.value) / (12 * 100);
+          const n = parseFloat(tenureSlider.value) * 12;
+    
+          loanVal.innerText = '₹' + P.toLocaleString('en-IN');
+          rateVal.innerText = rateSlider.value + '%';
+          tenureVal.innerText = tenureSlider.value + ' Years';
+    
+          const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+          const totalPayment = emi * n;
+          const totalInterest = totalPayment - P;
+    
+          monthlyEmi.innerText = '₹' + Math.round(emi).toLocaleString('en-IN');
+          principalDisplay.innerText = '₹' + Math.round(P).toLocaleString('en-IN');
+          interestDisplay.innerText = '₹' + Math.round(totalInterest).toLocaleString('en-IN');
+        }
+    
+        loanSlider.addEventListener('input', calculateEMI);
+        rateSlider.addEventListener('input', calculateEMI);
+        tenureSlider.addEventListener('input', calculateEMI);
+    
+        calculateEMI();
+      </script>
+      
 </body>
 </html>
