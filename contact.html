@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Book Site Visit | BuildTech</title>
   <style>
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: #ffffff;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -148,20 +173,23 @@
       <h1>Get in Touch</h1>
       <p>Schedule a site visit for ongoing flats or request structural contracting quotes.</p>
 
-      <form>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- তোমার Web3Forms Access Key এখানে বসাও -->
+        <input type="hidden" name="access_key" value="5f67649f-f81c-49e9-b168-a7daee2d5955" />
+
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" placeholder="Enter your full name" required />
+          <input type="text" name="name" placeholder="Enter your full name" required />
         </div>
 
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="Enter 10-digit mobile number" required />
+          <input type="tel" name="phone" placeholder="Enter 10-digit mobile number" required />
         </div>
 
         <div class="form-group">
           <label>Inquiry Type</label>
-          <select>
+          <select name="inquiry_type">
             <option>Buying a Flat (Emerald Heights)</option>
             <option>High-Rise Structural Contracting (G+4 to G+18)</option>
             <option>Land Joint Venture / Promoting</option>
@@ -170,11 +198,12 @@
 
         <div class="form-group">
           <label>Message (Optional)</label>
-          <textarea rows="4" placeholder="Any specific requirements or queries..."></textarea>
+          <textarea name="message" rows="4" placeholder="Any specific requirements or queries..."></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Submit Inquiry</button>
       </form>
+
     </div>
   </div>
   <script>
@@ -188,7 +217,12 @@
       form.reset();
     });
   </script>
-
+ <!-- WhatsApp Direct Button -->
+ <a href="https://wa.me/919330781796?text=Hello%20BuildTech,%20I%20want%20more%20details%20about%20your%20projects." 
+ class="whatsapp-float" 
+ target="_blank">
+💬 Chat on WhatsApp
+</a>
 
 </body>
 </html>
